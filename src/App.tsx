@@ -2,6 +2,8 @@ import './App.css'
 
 import CaseStudyCard from './components/CaseStudyCard'
 
+import ContactForm from './components/ContactForm'
+
 function App() {
   return (
     <main>
@@ -27,7 +29,7 @@ function App() {
           <nav aria-label="Professional links">
             <a
               className="primary-link"
-              href="mailto:irina.safronova0801@gmail.com"
+              href="#contact"
             >
               Get in touch
             </a>
@@ -184,21 +186,19 @@ function App() {
       </section>
 
       {/* CONTACT */}
-      <section className="contact-section">
-        <p className="eyebrow">Let&apos;s connect</p>
+<section className="contact-section" id="contact">
+  <p className="eyebrow">Let&apos;s connect</p>
 
-        <h2>Let&apos;s build something useful.</h2>
+  <h2>Let&apos;s build something useful.</h2>
 
-        <p>
-          I&apos;m open to roles and projects where I can build useful
-          products, learn quickly, and contribute across frontend and AI
-          workflows.
-        </p>
+  <p>
+    I&apos;m open to roles and projects where I can build useful
+    products, learn quickly, and contribute across frontend and AI
+    workflows.
+  </p>
 
-        <a href="mailto:irina.safronova0801@gmail.com">
-          Start a conversation
-        </a>
-      </section>
+  <ContactForm />
+</section>
 
       {/* FOOTER */}
       <footer>
