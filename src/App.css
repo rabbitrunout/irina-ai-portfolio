@@ -845,3 +845,52 @@ footer {
 .contact-status.error {
   color: #b42318 !important;
 }
+/* =========================
+   ACCESSIBILITY / POLISH
+========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(11, 128, 109, 0.38);
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .eyebrow,
+  .hero-intro span:last-child,
+  .hero-card > span,
+  .project-topline,
+  .secondary-projects article > span {
+    font-size: 0.8rem;
+  }
+
+  .project-meta span,
+  footer {
+    font-size: 0.88rem;
+  }
+
+  .hero-text,
+  .featured-project > p,
+  .about-strip > p,
+  .building-grid p,
+  .contact-section p:not(.eyebrow) {
+    line-height: 1.72;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

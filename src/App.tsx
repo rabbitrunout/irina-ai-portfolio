@@ -71,7 +71,7 @@ function App() {
           </p>
 
           <div className="availability">
-            <span className="status-dot" />
+            <span className="status-dot" aria-hidden="true" />
             Open to opportunities
           </div>
         </aside>
