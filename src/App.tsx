@@ -12,7 +12,7 @@ function App() {
         <div className="hero-copy">
           <div className="hero-intro">
             <span>Irina Safronova</span>
-            <span>Frontend & AI Developer</span>
+            <span>Frontend Developer</span>
           </div>
 
           <h1>
