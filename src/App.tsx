@@ -1,7 +1,6 @@
 import './App.css'
 
 import CaseStudyCard from './components/CaseStudyCard'
-
 import ContactForm from './components/ContactForm'
 
 function App() {
@@ -16,21 +15,21 @@ function App() {
           </div>
 
           <h1>
-            Building practical
-            <span>AI-powered products.</span>
+            Frontend Developer
+            <span> building practical web products with AI.</span>
           </h1>
 
           <p className="hero-text">
-            I build modern web and AI-powered experiences with React,
-            TypeScript, Next.js, and AI tools — focused on real users,
-            clear interfaces, and useful automation.
+            I build user-focused frontend products with React and TypeScript,
+            using AI where it makes the product or development workflow more useful.
+          </p>
+
+          <p className="hero-stack">
+            React · TypeScript · Next.js · AI-assisted development
           </p>
 
           <nav aria-label="Professional links">
-            <a
-              className="primary-link"
-              href="#contact"
-            >
+            <a className="primary-link" href="#contact">
               Get in touch
             </a>
 
@@ -62,9 +61,7 @@ function App() {
 
         <aside className="hero-card">
           <span>Currently building</span>
-
           <strong>Glowi Club Manager Agent</strong>
-
           <p>
             A tool-grounded AI agent that helps club managers identify
             competition and payment actions that need attention.
@@ -84,7 +81,6 @@ function App() {
             <p className="eyebrow">Selected work</p>
             <h2>Projects I&apos;m building and shipping.</h2>
           </div>
-
           <span>2026</span>
         </div>
 
@@ -95,7 +91,6 @@ function App() {
           </div>
 
           <h3>Glowi Club Manager Agent</h3>
-
           <p>
             A read-only club-management agent that checks competition
             and payment data, determines priorities with tool-grounded
@@ -128,9 +123,7 @@ function App() {
 
           <article className="approach-card">
             <span>How I work</span>
-
             <h3>Build, test, iterate.</h3>
-
             <ul>
               <li>Build for real users and real workflows.</li>
               <li>Ground AI features in structured data.</li>
@@ -145,10 +138,7 @@ function App() {
       <section className="about-strip">
         <div>
           <p className="eyebrow">About</p>
-
-          <h2>
-            Frontend engineering with practical AI integration.
-          </h2>
+          <h2>Frontend engineering with practical AI integration.</h2>
         </div>
 
         <p>
@@ -165,10 +155,7 @@ function App() {
 
         <div className="building-grid">
           <div>
-            <h2>
-              Glowi is becoming more than a chat interface.
-            </h2>
-
+            <h2>Glowi is becoming more than a chat interface.</h2>
             <p>
               Current work includes structured tool results, agent
               workflows, deterministic priority logic, failure handling,
@@ -186,19 +173,17 @@ function App() {
       </section>
 
       {/* CONTACT */}
-<section className="contact-section" id="contact">
-  <p className="eyebrow">Let&apos;s connect</p>
+      <section className="contact-section" id="contact">
+        <p className="eyebrow">Let&apos;s connect</p>
+        <h2>Let&apos;s build something useful.</h2>
+        <p>
+          I&apos;m open to roles and projects where I can build useful
+          products, learn quickly, and contribute across frontend and AI
+          workflows.
+        </p>
 
-  <h2>Let&apos;s build something useful.</h2>
-
-  <p>
-    I&apos;m open to roles and projects where I can build useful
-    products, learn quickly, and contribute across frontend and AI
-    workflows.
-  </p>
-
-  <ContactForm />
-</section>
+        <ContactForm />
+      </section>
 
       {/* FOOTER */}
       <footer>
