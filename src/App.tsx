@@ -2,12 +2,15 @@ import './App.css'
 
 import CaseStudyCard from './components/CaseStudyCard'
 import ContactForm from './components/ContactForm'
+import ShaderBackground from "./components/ShaderBackground";
 
 function App() {
   return (
     <main>
       {/* HERO */}
 <header className="hero-section">
+  <ShaderBackground />
+
   <div className="hero-copy">
    <div className="hero-intro">
   <span>Portfolio 2026</span>
