@@ -481,7 +481,7 @@ nav .primary-link:hover {
 
   align-items: start;
 
-  padding: 88px 0;
+  padding: 72px 0;
 
   border-bottom: 1px solid var(--border);
 }
@@ -992,5 +992,456 @@ textarea:focus-visible {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* =========================
+   LAUNCH HERO — NAVY / AI
+========================= */
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  padding: 82px 52px 76px;
+
+  border: 1px solid rgba(108, 122, 255, 0.18);
+  border-radius: 34px;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(124, 92, 255, 0.24),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 70% 85%,
+      rgba(44, 139, 255, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #071426 0%,
+      #0a1730 52%,
+      #10183d 100%
+    );
+
+  box-shadow:
+    0 30px 80px rgba(15, 23, 60, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+
+  background-size: 42px 42px;
+ -webkit-mask-image: linear-gradient(to bottom, black, transparent 82%);
+mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+.hero-copy,
+.hero-card {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-intro span:first-child {
+  color: #ffffff;
+}
+
+.hero-intro span:last-child {
+  color: #8ea2ff;
+}
+
+.hero-intro span:last-child::before {
+  background: #8ea2ff;
+}
+
+.hero-copy h1 {
+  max-width: 800px;
+  color: #ffffff;
+}
+
+.hero-copy h1 span {
+  background: linear-gradient(
+    90deg,
+    #8ca6ff 0%,
+    #9a83ff 45%,
+    #d68bff 100%
+  );
+
+ -webkit-background-clip: text;
+background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  color: #b9c5dc;
+}
+
+.hero-stack {
+  margin: 22px 0 0;
+
+  color: #8fa3c7;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero-section nav a {
+  border-color: rgba(154, 166, 214, 0.28);
+  background: rgba(255, 255, 255, 0.045);
+  color: #e9edff;
+
+  -webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+}
+
+.hero-section nav a:hover {
+  border-color: #8295ff;
+  background: rgba(123, 104, 255, 0.12);
+
+  box-shadow: 0 9px 30px rgba(86, 92, 255, 0.18);
+}
+
+.hero-section nav .primary-link {
+  border-color: transparent;
+
+  background: linear-gradient(
+    90deg,
+    #5c76ff,
+    #795eff
+  );
+
+  color: #ffffff;
+
+  box-shadow: 0 10px 30px rgba(87, 83, 255, 0.27);
+}
+
+.hero-section nav .primary-link:hover {
+  background: linear-gradient(
+    90deg,
+    #6c83ff,
+    #876bff
+  );
+}
+
+.hero-card {
+  border: 1px solid rgba(157, 171, 255, 0.2);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 30, 65, 0.92),
+      rgba(15, 24, 58, 0.78)
+    );
+
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  -webkit-backdrop-filter: blur(18px);
+backdrop-filter: blur(18px);
+}
+
+.hero-card > span {
+  color: #9faeff;
+}
+
+.hero-card p {
+  color: #b7c2dc;
+}
+
+.hero-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 22px;
+}
+
+.hero-tech span {
+  border: 1px solid rgba(137, 154, 255, 0.22);
+  border-radius: 999px;
+
+  background: rgba(108, 92, 255, 0.09);
+
+  padding: 7px 10px;
+
+  color: #c6ceff;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.availability {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #d7def0;
+}
+
+.status-dot {
+  background: #79e7be;
+  box-shadow: 0 0 0 5px rgba(121, 231, 190, 0.1);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-section {
+    width: calc(100% + 24px);
+    margin-left: -12px;
+    padding: 62px 34px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  .hero-section {
+    width: 100%;
+    margin-left: 0;
+
+    padding: 42px 22px;
+
+    border-radius: 26px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.9rem, 15vw, 4.2rem);
+    line-height: 0.94;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero-stack {
+    line-height: 1.6;
+  }
+
+  .hero-card {
+    padding: 26px 22px;
+  }
+}
+
+
+/* =========================
+   LAUNCH THEME — BLUE / VIOLET
+========================= */
+
+:root {
+  --bg: #f7f8fc;
+  --surface: #ffffff;
+  --surface-dark: #09152d;
+  --surface-soft: #f1f3ff;
+
+  --text: #111827;
+  --muted: #667085;
+  --border: #e1e5ef;
+
+  --accent: #665cff;
+  --accent-dark: #5146db;
+  --accent-soft: #eeecff;
+
+  --shadow: 0 18px 50px rgba(31, 41, 84, 0.09);
+}
+
+/* Section labels */
+.eyebrow {
+  color: #6258e8;
+}
+
+/* =========================
+   SELECTED WORK
+========================= */
+
+.featured-project {
+  border-color: rgba(102, 92, 255, 0.12);
+
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(139, 116, 255, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #f0f2ff 0%,
+      #f7f7ff 46%,
+      #ffffff 100%
+    );
+
+  box-shadow:
+    0 22px 60px rgba(47, 52, 105, 0.09);
+}
+
+.project-topline {
+  color: #554bd2;
+}
+
+.featured-project > p {
+  color: #596477;
+}
+
+.project-meta span {
+  border-color: rgba(102, 92, 255, 0.18);
+  background: rgba(255, 255, 255, 0.82);
+  color: #5146c9;
+}
+
+/* =========================
+   SECONDARY PROJECT CARDS
+========================= */
+
+.secondary-projects article {
+  border-color: #e5e7f0;
+
+  box-shadow:
+    0 18px 45px rgba(38, 44, 86, 0.07);
+}
+
+.secondary-projects article > span {
+  background: #eeecff;
+  color: #554bd2;
+}
+
+.secondary-projects article:hover {
+  border-color: rgba(102, 92, 255, 0.25);
+
+  box-shadow:
+    0 22px 55px rgba(70, 63, 150, 0.1);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-strip {
+  border-bottom-color: #e4e7ef;
+}
+
+/* =========================
+   CURRENTLY BUILDING
+========================= */
+
+.building-section {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(124, 112, 255, 0.16);
+
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(116, 91, 255, 0.22),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #071426 0%,
+      #0b1733 55%,
+      #111844 100%
+    );
+
+  box-shadow:
+    0 28px 70px rgba(16, 28, 65, 0.16);
+}
+
+.building-section .eyebrow {
+  color: #a9b4ff;
+}
+
+.building-grid p {
+  color: #bac5dc;
+}
+
+.build-list span {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  color: #dbe2f3;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-field input,
+.contact-field textarea {
+  border-color: #dfe3ee;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: #665cff;
+
+  box-shadow:
+    0 0 0 4px rgba(102, 92, 255, 0.11);
+}
+
+.contact-submit,
+.contact-section > a {
+  border-color: #665cff;
+  background: #665cff;
+}
+
+.contact-submit:hover:not(:disabled),
+.contact-section > a:hover {
+  background: #5146db;
+}
+
+/* =========================
+   ACCESSIBILITY / FOCUS
+========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(102, 92, 255, 0.42);
+  outline-offset: 3px;
+}
+
+/* =========================
+   HERO FINAL POLISH
+========================= */
+
+.hero-card {
+  transform: scale(1.035);
+  transform-origin: center;
+}
+
+.hero-section {
+  box-shadow:
+    0 34px 90px rgba(21, 31, 79, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Keep hero card normal size on smaller screens */
+@media (max-width: 900px) {
+  .hero-card {
+    transform: none;
+  }
+}
+
+/* =========================
+   MOBILE LAUNCH POLISH
+========================= */
+
+@media (max-width: 620px) {
+  .featured-project {
+    border-radius: 24px;
+  }
+
+  .building-section {
+    border-radius: 26px;
   }
 }

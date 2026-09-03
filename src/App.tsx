@@ -7,72 +7,82 @@ function App() {
   return (
     <main>
       {/* HERO */}
-      <header className="hero-section">
-        <div className="hero-copy">
-          <div className="hero-intro">
-            <span>Irina Safronova</span>
-            <span>Frontend Developer</span>
-          </div>
+      {/* HERO */}
+<header className="hero-section">
+  <div className="hero-copy">
+    <div className="hero-intro">
+      <span>Irina Safronova</span>
+      <span>Frontend & AI Developer</span>
+    </div>
 
-          <h1>
-            Frontend Developer
-            <span> building practical web products with AI.</span>
-          </h1>
+    <h1>
+      Building practical
+      <span>web products with AI.</span>
+    </h1>
 
-          <p className="hero-text">
-            I build user-focused frontend products with React and TypeScript,
-            using AI where it makes the product or development workflow more useful.
-          </p>
+    <p className="hero-text">
+      I build user-focused frontend products with React and TypeScript,
+      using AI where it makes the product or development workflow more useful.
+    </p>
 
-          <p className="hero-stack">
-            React · TypeScript · Next.js · AI-assisted development
-          </p>
+    <p className="hero-stack">
+      React · TypeScript · Next.js · AI
+    </p>
 
-          <nav aria-label="Professional links">
-            <a className="primary-link" href="#contact">
-              Get in touch
-            </a>
+    <nav aria-label="Professional links">
+      <a className="primary-link" href="#contact">
+        Get in touch
+      </a>
 
-            <a
-              href="https://github.com/rabbitrunout"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
+      <a
+        href="https://github.com/rabbitrunout"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
 
-            <a
-              href="https://www.linkedin.com/in/irina-safronova-688130243/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
+      <a
+        href="https://www.linkedin.com/in/irina-safronova-688130243/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        LinkedIn
+      </a>
 
-            <a
-              href="/Irina-Safronova-Resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Resume
-            </a>
-          </nav>
-        </div>
+      <a
+        href="/Irina-Safronova-Resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Resume
+      </a>
+    </nav>
+  </div>
 
-        <aside className="hero-card">
-          <span>Currently building</span>
-          <strong>Glowi Club Manager Agent</strong>
-          <p>
-            A tool-grounded AI agent that helps club managers identify
-            competition and payment actions that need attention.
-          </p>
+  <aside className="hero-card">
+    <span>Currently building</span>
 
-          <div className="availability">
-            <span className="status-dot" aria-hidden="true" />
-            Open to opportunities
-          </div>
-        </aside>
-      </header>
+    <strong>Glowi Club Manager Agent</strong>
+
+    <p>
+      A tool-grounded AI agent that helps club managers identify
+      competition and payment actions that need attention.
+    </p>
+
+    <div className="hero-tech">
+      <span>Next.js</span>
+      <span>TypeScript</span>
+      <span>AI SDK</span>
+      <span>Tool Calling</span>
+    </div>
+
+    <div className="availability">
+      <span className="status-dot" aria-hidden="true" />
+      Open to opportunities
+    </div>
+  </aside>
+</header>
 
       {/* SELECTED WORK */}
       <section className="selected-work">
