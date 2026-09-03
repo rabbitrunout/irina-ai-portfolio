@@ -7,18 +7,21 @@ function App() {
   return (
     <main>
       {/* HERO */}
-      {/* HERO */}
 <header className="hero-section">
   <div className="hero-copy">
-    <div className="hero-intro">
-      <span>Irina Safronova</span>
-      <span>Frontend & AI Developer</span>
-    </div>
+   <div className="hero-intro">
+  <span>Portfolio 2026</span>
+  <span>Frontend · AI · Product</span>
+</div>
 
     <h1>
-      Building practical
-      <span>web products with AI.</span>
-    </h1>
+  Irina Safronova
+  <span>Frontend & AI Developer</span>
+</h1>
+
+<p className="hero-tagline">
+  Building practical web products with AI.
+</p>
 
     <p className="hero-text">
       I build user-focused frontend products with React and TypeScript,
@@ -60,28 +63,61 @@ function App() {
     </nav>
   </div>
 
-  <aside className="hero-card">
+ <aside className="hero-card">
+  <div className="hero-card-top">
     <span>Currently building</span>
+    <span className="hero-card-badge">AI Agent</span>
+  </div>
 
-    <strong>Glowi Club Manager Agent</strong>
+  <strong>Glowi Club Manager Agent</strong>
 
-    <p>
-      A tool-grounded AI agent that helps club managers identify
-      competition and payment actions that need attention.
-    </p>
+  <p>
+    A tool-grounded AI agent that helps club managers identify
+    competition and payment actions that need attention.
+  </p>
 
-    <div className="hero-tech">
-      <span>Next.js</span>
-      <span>TypeScript</span>
-      <span>AI SDK</span>
-      <span>Tool Calling</span>
+  <div className="hero-dashboard">
+    <div className="dashboard-row urgent">
+      <span>Urgent</span>
+      <strong>3</strong>
     </div>
 
-    <div className="availability">
-      <span className="status-dot" aria-hidden="true" />
-      Open to opportunities
+    <div className="dashboard-row soon">
+      <span>Soon</span>
+      <strong>5</strong>
     </div>
-  </aside>
+
+    <div className="dashboard-row fyi">
+      <span>FYI</span>
+      <strong>8</strong>
+    </div>
+  </div>
+
+  <div className="hero-mini-chart" aria-hidden="true">
+    <svg viewBox="0 0 220 70">
+      <polyline
+        points="0,58 28,46 52,52 78,32 104,39 132,20 158,27 188,12 220,18"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
+
+  <div className="hero-tech">
+    <span>Next.js</span>
+    <span>TypeScript</span>
+    <span>AI SDK</span>
+    <span>Tool Calling</span>
+  </div>
+
+  <div className="availability">
+    <span className="status-dot" aria-hidden="true" />
+    Open to opportunities
+  </div>
+</aside>
 </header>
 
       {/* SELECTED WORK */}
