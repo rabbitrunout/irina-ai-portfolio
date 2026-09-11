@@ -99,10 +99,9 @@ function Experience() {
 
           <ul>
             <li>
-              Built and refined React and TypeScript
-              interfaces through frontend engineering
-              assignments.
-            </li>
+  Built and refined React and TypeScript interfaces
+  across production-focused frontend projects.
+</li>
 
             <li>
               Improved accessibility and performance using

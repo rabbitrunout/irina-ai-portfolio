@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from 'react';
 
 import Process from './components/Process'
 import Skills from './components/Skills'
@@ -13,6 +14,14 @@ import {
 } from './data/projectsData'
 
 function App() {
+
+ type GalleryProject =
+  | (typeof featuredProjects)[number]
+  | (typeof moreProjects)[number]
+
+const [activeProject, setActiveProject] =
+  useState<GalleryProject | null>(null)
+const [activeMediaIndex, setActiveMediaIndex] = useState(0);
   return (
     <main>
       {/* HERO */}
@@ -43,13 +52,12 @@ function App() {
           </h1>
 
           <p className="hero-tagline">
-            Building practical web products with AI.
+            Building practical frontend products with React, TypeScript, and AI.
           </p>
 
           <p className="hero-text">
-            I build user-focused frontend products with React
-            and TypeScript, using AI where it makes the product
-            or development workflow more useful.
+           I build user-focused frontend products with React and TypeScript,
+and integrate AI where it improves the product or development workflow.
           </p>
 
           <p className="hero-stack">
@@ -73,12 +81,12 @@ function App() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/irina-safronova-688130243/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
+  href="https://www.linkedin.com/in/irina-safronova-dev/"
+  target="_blank"
+  rel="noreferrer"
+>
+  LinkedIn
+</a>
 
             <a
               href="/Irina-Safronova-Resume.pdf"
@@ -264,35 +272,37 @@ function App() {
                 </div>
 
                 {project.media[0] && (
-                  <div className="featured-project-media">
-                    {project.media[0].type ===
-                    'video' ? (
-                      <video
-                        src={
-                          project.media[0].src
-                        }
-                        muted
-                        playsInline
-                        preload="metadata"
-                      />
-                    ) : (
-                      <img
-                        src={
-                          project.media[0].src
-                        }
-                        alt={`${project.title} interface`}
-                        loading="lazy"
-                      />
-                    )}
-                  </div>
-                )}
+  <button
+    type="button"
+    className="featured-project-media"
+    onClick={() => {
+      setActiveProject(project)
+      setActiveMediaIndex(0)
+    }}
+    aria-label={`Open ${project.title} gallery`}
+  >
+    {project.media[0].type === 'video' ? (
+      <video
+        src={project.media[0].src}
+        muted
+        playsInline
+        preload="metadata"
+      />
+    ) : (
+      <img
+        src={project.media[0].src}
+        alt={`${project.title} interface`}
+        loading="lazy"
+      />
+    )}
+  </button>
+)}
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* MORE WORK */}
       {/* MORE WORK */}
 <section className="more-work-section">
   <div className="section-heading">
@@ -329,7 +339,15 @@ function App() {
           </div>
 
           {project.media[0] && (
-            <div className="more-work-media">
+            <button
+              type="button"
+              className="more-work-media"
+              onClick={() => {
+                setActiveProject(project)
+                setActiveMediaIndex(0)
+              }}
+              aria-label={`Open ${project.title} gallery`}
+            >
               {project.media[0].type === 'video' ? (
                 <video
                   src={project.media[0].src}
@@ -344,7 +362,7 @@ function App() {
                   loading="lazy"
                 />
               )}
-            </div>
+            </button>
           )}
 
           <div className="more-work-meta">
@@ -379,6 +397,92 @@ function App() {
     ))}
   </div>
 </section>
+
+      {activeProject && (
+        <div
+          className="project-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${activeProject.title} gallery`}
+        >
+          <button
+            type="button"
+            className="lightbox-backdrop"
+            onClick={() => setActiveProject(null)}
+            aria-label="Close gallery"
+          />
+
+          <div className="lightbox-content">
+            <button
+              type="button"
+              className="lightbox-close"
+              onClick={() => setActiveProject(null)}
+              aria-label="Close gallery"
+            >
+              ×
+            </button>
+
+            <div className="lightbox-media">
+              {activeProject.media[activeMediaIndex].type === 'video' ? (
+                <video
+                  src={activeProject.media[activeMediaIndex].src}
+                  controls
+                  autoPlay
+                />
+              ) : (
+                <img
+  src={activeProject.media[activeMediaIndex].src}
+  alt={`${activeProject.title} screenshot ${activeMediaIndex + 1}`}
+  className={
+    activeProject.media[activeMediaIndex].src ===
+    '/projects/client/anna/after.png'
+      ? 'lightbox-tall-image'
+      : ''
+  }
+/>
+              )}
+            </div>
+
+            {activeProject.media.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  className="lightbox-nav lightbox-prev"
+                  onClick={() =>
+                    setActiveMediaIndex((current) =>
+                      current === 0
+                        ? activeProject.media.length - 1
+                        : current - 1
+                    )
+                  }
+                  aria-label="Previous image"
+                >
+                  ←
+                </button>
+
+                <button
+                  type="button"
+                  className="lightbox-nav lightbox-next"
+                  onClick={() =>
+                    setActiveMediaIndex((current) =>
+                      current === activeProject.media.length - 1
+                        ? 0
+                        : current + 1
+                    )
+                  }
+                  aria-label="Next image"
+                >
+                  →
+                </button>
+              </>
+            )}
+
+            <div className="lightbox-counter">
+              {activeMediaIndex + 1} / {activeProject.media.length}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* EXPERIENCE */}
       <Experience />

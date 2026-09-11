@@ -997,7 +997,7 @@ textarea:focus-visible {
 
 
 /* =========================
-   LAUNCH HERO — NAVY / AI
+   LAUNCH HERO â€” NAVY / AI
 ========================= */
 
 .hero-section {
@@ -1236,7 +1236,7 @@ backdrop-filter: blur(18px);
 
 
 /* =========================
-   LAUNCH THEME — BLUE / VIOLET
+   LAUNCH THEME â€” BLUE / VIOLET
 ========================= */
 
 :root {
@@ -1668,7 +1668,7 @@ textarea:focus-visible {
 }
 
 /* =========================================
-   FEATURED WORK — PRODUCT CASE STUDIES
+   FEATURED WORK â€” PRODUCT CASE STUDIES
    ========================================= */
 
 .featured-projects-grid {
@@ -1750,10 +1750,11 @@ textarea:focus-visible {
 }
 
 .project-engineering-list li::before {
-  content: "↳";
+  content: "•";
   position: absolute;
   left: 0;
   color: #5c4cff;
+  font-weight: 700;
 }
 
 .project-tech {
@@ -2074,10 +2075,11 @@ textarea:focus-visible {
 }
 
 .experience-card li::before {
-  content: "↳";
+  content: "•";
   position: absolute;
   left: 0;
   color: #5c4cff;
+  font-weight: 700;
 }
 
 .experience-stack {
@@ -2892,7 +2894,7 @@ svg {
 }
 
 @media (max-width: 640px) {
-  /* HERO NAV — cleaner on mobile */
+  /* HERO NAV â€” cleaner on mobile */
   .site-nav {
     gap: 10px 16px;
     margin: 16px 0 24px;
@@ -2955,7 +2957,7 @@ svg {
 }
 
 /* =========================================
-   MORE WORK — WITH PREVIEWS
+   MORE WORK â€” WITH PREVIEWS
    ========================================= */
 
 .more-work-card-content {
@@ -2982,18 +2984,19 @@ svg {
 
 .more-work-media {
   width: 100%;
-  height: 170px;
+  height: 220px;
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid rgba(13, 14, 30, 0.08);
   background: #f3f2ff;
+  cursor: zoom-in;
 }
 
 .more-work-media img,
 .more-work-media video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -3051,4 +3054,876 @@ svg {
 .more-work-card:last-child .more-work-media img {
   object-fit: contain;
   object-position: center;
+}
+
+.more-work-media {
+  display: block;
+  text-decoration: none;
+}
+
+.more-work-media:hover img {
+  transform: scale(1.02);
+}
+
+.more-work-media img {
+  transition: transform 0.25s ease;
+}
+
+/* =========================================
+   MORE WORK — GALLERY / LIGHTBOX
+   ========================================= */
+
+.more-work-media {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(13, 14, 30, 0.08);
+  background: #f3f2ff;
+  cursor: zoom-in;
+  padding: 0;
+  display: block;
+  appearance: none;
+}
+
+.more-work-media img,
+.more-work-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.more-work-media img {
+  transition: transform 0.25s ease;
+}
+
+.more-work-card:hover .more-work-media img {
+  transform: scale(1.02);
+}
+
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: rgba(8, 9, 20, 0.88);
+  cursor: zoom-out;
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 88vw);
+  height: min(720px, 76vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-media {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.lightbox-media img,
+.lightbox-media video {
+  display: block;
+  max-width: 88vw;
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  z-index: 3;
+  border: 0;
+  background: rgba(255, 255, 255, 0.96);
+  color: #111322;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.lightbox-close {
+  top: -12px;
+  right: -12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.lightbox-prev {
+  left: -64px;
+}
+
+.lightbox-next {
+  right: -64px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  left: 50%;
+  bottom: -34px;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 800px) {
+  .more-work-media {
+    height: 240px;
+  }
+
+  .project-lightbox {
+    padding: 20px;
+  }
+
+  .lightbox-content {
+    width: 92vw;
+    height: 78vh;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+
+  .lightbox-close {
+    top: 8px;
+    right: 8px;
+  }
+
+  .lightbox-counter {
+    bottom: -28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .more-work-media {
+    height: 220px;
+    border-radius: 10px;
+  }
+}
+
+
+/* =========================================
+   PROJECT GALLERY / LIGHTBOX
+   ========================================= */
+
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: rgba(8, 9, 20, 0.9);
+  cursor: zoom-out;
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(1180px, 88vw);
+  height: min(760px, 78vh);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-media {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: auto;
+
+  scrollbar-width: thin;
+}
+
+/* Normal screenshots */
+
+.lightbox-media img,
+.lightbox-media video {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* Very tall full-page screenshots */
+
+.lightbox-media img.lightbox-tall-image {
+  align-self: flex-start;
+
+  width: min(820px, 72vw);
+  height: auto;
+
+  max-width: none;
+  max-height: none;
+
+  object-fit: initial;
+}
+
+/* Close */
+
+.lightbox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: white;
+  color: #111322;
+
+  font-size: 28px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation */
+
+.lightbox-nav {
+  position: fixed;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 5;
+
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.96);
+  color: #111322;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.lightbox-prev {
+  left: 30px;
+}
+
+.lightbox-next {
+  right: 30px;
+}
+
+/* Counter */
+
+.lightbox-counter {
+  position: fixed;
+
+  left: 50%;
+  bottom: 24px;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  .project-lightbox {
+    padding: 16px;
+  }
+
+  .lightbox-content {
+    width: 94vw;
+    height: 78vh;
+  }
+
+  .lightbox-media img.lightbox-tall-image {
+    width: 88vw;
+  }
+
+  .lightbox-prev {
+    left: 12px;
+  }
+
+  .lightbox-next {
+    right: 12px;
+  }
+
+  .lightbox-close {
+    top: 4px;
+    right: 4px;
+  }
+
+  .lightbox-counter {
+    bottom: 12px;
+  }
+}
+
+.featured-project-media {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  background: transparent;
+  cursor: zoom-in;
+  display: block;
+}
+
+.featured-project-media img,
+.featured-project-media video {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.featured-project-media img {
+  transition: transform 0.25s ease;
+}
+
+.featured-project-media:hover img {
+  transform: scale(1.015);
+}
+
+/* Featured mobile screenshots â€” larger in lightbox */
+.lightbox-media img {
+  max-height: 78vh;
+  max-width: 88vw;
+}
+
+/* Scale smaller portrait screenshots up to a useful viewing size */
+.lightbox-media img:not(.lightbox-tall-image) {
+  height: min(78vh, 760px);
+  width: auto;
+  object-fit: contain;
+}
+
+/* Wide screenshots should still fit naturally */
+@media (min-aspect-ratio: 1/1) {
+  .lightbox-media img:not(.lightbox-tall-image) {
+    max-width: 88vw;
+  }
+}
+
+/* =========================================
+   FINAL GALLERY OVERRIDES
+   Featured Work + More Work
+   Keep this block at the very end of App.css
+   ========================================= */
+
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: rgba(8, 9, 20, 0.9);
+  cursor: zoom-out;
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 88vw);
+  height: min(780px, 80vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-media {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+}
+
+.lightbox-media img,
+.lightbox-media video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* Only Anna's full-page screenshot receives this class in App.tsx */
+.lightbox-media img.lightbox-tall-image {
+  align-self: flex-start;
+  width: min(820px, 72vw);
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: initial;
+}
+
+.featured-project-media {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  display: block;
+}
+
+.featured-project-media img,
+.featured-project-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.featured-project-media img {
+  transition: transform 0.25s ease;
+}
+
+.featured-project-media:hover img {
+  transform: scale(1.015);
+}
+
+.more-work-media {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: zoom-in;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: fixed;
+  z-index: 10001;
+  border: 0;
+  background: rgba(255, 255, 255, 0.97);
+  color: #111322;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.lightbox-close {
+  top: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 29px;
+  line-height: 1;
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.lightbox-prev {
+  left: 28px;
+}
+
+.lightbox-next {
+  right: 28px;
+}
+
+.lightbox-counter {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 10001;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.48);
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 800px) {
+  .project-lightbox {
+    padding: 18px;
+  }
+
+  .lightbox-content {
+    width: 92vw;
+    height: 80vh;
+  }
+
+  .lightbox-media img.lightbox-tall-image {
+    width: 88vw;
+  }
+
+  .lightbox-close {
+    top: 14px;
+    right: 14px;
+  }
+
+  .lightbox-prev {
+    left: 12px;
+  }
+
+  .lightbox-next {
+    right: 12px;
+  }
+
+  .lightbox-counter {
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-content {
+    width: 94vw;
+    height: 78vh;
+  }
+
+  .lightbox-close {
+    width: 42px;
+    height: 42px;
+    font-size: 26px;
+  }
+
+  .lightbox-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+}
+
+
+/* =========================================
+   FEATURED WORK — COMPACT WIDTH
+   ========================================= */
+
+.selected-work {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.featured-projects-grid {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured-project {
+  border-radius: 18px;
+}
+
+.featured-project-content {
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(260px, 0.85fr);
+
+  gap: 32px;
+  padding: 24px 28px 30px;
+}
+
+.featured-project-media {
+  height: 360px;
+}
+
+.featured-project .project-topline {
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+@media (max-width: 900px) {
+  .selected-work,
+  .featured-projects-grid {
+    max-width: none;
+  }
+
+  .featured-project-content {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project-media {
+    height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .featured-project-content {
+    padding: 18px;
+  }
+
+  .featured-project .project-topline {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .featured-project-media {
+    height: 330px;
+  }
+}
+
+/* =========================================
+   FINAL CONTENT WIDTH SYSTEM
+   ========================================= */
+
+/* Main editorial sections */
+.about-strip,
+.skills-section,
+.selected-work,
+.more-work-section,
+.experience-section,
+.education-section,
+.process-section {
+  width: min(1080px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Remove extra horizontal padding from sections
+   because width is now controlled above */
+.skills-section,
+.more-work-section,
+.experience-section,
+.education-section,
+.process-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* More Work */
+.more-work-grid {
+  width: 100%;
+}
+
+/* Experience */
+.experience-grid {
+  width: 100%;
+}
+
+/* Education */
+.education-grid {
+  width: 100%;
+}
+
+/* Process */
+.process-grid {
+  width: 100%;
+}
+
+/* Currently Building stays slightly wider
+   so it works as a strong visual break */
+.building-section {
+  width: min(1120px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contact should be intentionally narrower */
+.contact-section {
+  width: min(760px, calc(100% - 40px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .about-strip,
+  .skills-section,
+  .selected-work,
+  .more-work-section,
+  .experience-section,
+  .education-section,
+  .process-section {
+    width: calc(100% - 28px);
+  }
+
+  .building-section {
+    width: calc(100% - 24px);
+  }
+
+  .contact-section {
+    width: calc(100% - 28px);
+  }
+}
+
+/* =========================================
+   FINAL DESKTOP SECTION RHYTHM
+   ========================================= */
+
+@media (min-width: 801px) {
+  .skills-section,
+  .selected-work,
+  .more-work-section,
+  .experience-section,
+  .education-section,
+  .process-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .section-heading {
+    margin-bottom: 34px;
+  }
+
+  .selected-work .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .more-work-section .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .experience-section .section-heading,
+  .education-section .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .process-section .section-heading {
+    margin-bottom: 32px;
+  }
+}
+
+
+/* =========================================
+   FINAL HARMONY POLISH
+   ========================================= */
+
+/* About — slightly calmer than major section titles */
+.about-strip h2 {
+  font-size: clamp(2rem, 3.1vw, 3rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+/* Pull More Work a little closer to Featured Work */
+@media (min-width: 801px) {
+  .more-work-section {
+    padding-top: 58px;
+  }
+
+  /* Make Currently Building feel like an intentional visual break */
+  .building-section {
+    width: min(1140px, calc(100% - 32px));
+  }
+}
+
+/* Final alignment for Currently Building */
+.building-section {
+  width: min(1080px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .building-section {
+    width: calc(100% - 28px);
+  }
 }

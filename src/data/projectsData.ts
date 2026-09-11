@@ -35,7 +35,7 @@ export const projects: Project[] = [
     badge: "iOS · Web · AI Product",
 
     shortDesc:
-      "Multi-platform product system that brings athlete schedules, competitions, payments, and parent priorities into one structured mobile and web experience.",
+      "A club-management product with athlete schedules, competitions, payments, and a tool-grounded AI agent that surfaces actions requiring attention.",
 
     problem:
       "Parents of rhythmic gymnasts often manage schedules, competition deadlines, payments, and coach requests across fragmented tools. Important actions can become difficult to track, especially when a parent manages more than one athlete.",
@@ -50,15 +50,12 @@ export const projects: Project[] = [
       "SwiftUI · MVVM · Angular · PHP · MySQL · REST APIs · JSON · AI SDK · Groq · Zod · Tool Calling",
 
     engineering: [
-      "MVVM architecture separating UI, business logic, and data responsibilities",
-      "Explicit athlete context across competitions, payments, and schedules",
-      "Structured tool calling for competition and payment data",
-      "Zod validation for AI tool inputs and outputs",
-      "Dynamic payment lifecycle: Paid, Pending, Due Soon, and Overdue",
-      "Competition deadline and action-required logic",
-      "Loading, empty, success, and error UI states",
-      "Reusable component system designed for product growth",
-    ],
+  "Built structured competition and payment workflows with explicit athlete context.",
+  "Implemented tool calling with validated structured data and deterministic priority logic.",
+  "Designed reusable UI states for loading, empty, success, and error scenarios.",
+  "Built payment lifecycle logic for Paid, Pending, Due Soon, and Overdue states.",
+  "Implemented competition deadline and action-required logic.",
+],
 
     impact: [
       "Centralized fragmented parent workflows into one product experience",
@@ -115,8 +112,8 @@ export const projects: Project[] = [
 
     badge: "iOS · SwiftUI · Product",
 
-    shortDesc:
-      "Vehicle maintenance application that tracks service history and prioritizes upcoming and overdue maintenance using mileage- and time-based reminders.",
+  shortDesc:
+  "A SwiftUI vehicle-maintenance app for tracking service history, mileage, reminders, and maintenance records.",
 
     problem:
       "Vehicle owners can lose track of maintenance schedules, service history, and upcoming work when information is spread across receipts, notes, and separate reminders.",
@@ -131,15 +128,11 @@ export const projects: Project[] = [
       "SwiftUI · Core Data · MVVM · iOS",
 
     engineering: [
-      "MVVM architecture with separation of UI and business logic",
-      "Core Data persistence for local vehicle and maintenance records",
-      "Mileage-based and time-based reminder logic",
-      "State-driven SwiftUI interface",
-      "CRUD workflows for vehicles and service records",
-      "Relational maintenance-history data model",
-      "Reusable mobile UI components",
-      "Priority logic for upcoming and overdue maintenance",
-    ],
+  "Built with SwiftUI, Core Data, and MVVM architecture.",
+  "Implemented CRUD workflows and relational maintenance history.",
+  "Designed state-driven interfaces for vehicle data, reminders, and service records.",
+  "Built priority logic for upcoming and overdue maintenance.",
+],
 
     impact: [
       "Created one structured place for vehicle maintenance history",
@@ -244,20 +237,23 @@ export const projects: Project[] = [
     media: [
   {
     type: "image",
-    src: "/projects/client/anna/after.png",
-    label: "Final website",
-  },
-  {
-    type: "image",
     src: "/projects/client/anna/1.png",
+    label: "Cinematic Hero Section",
   },
   {
     type: "image",
     src: "/projects/client/anna/2.png",
+    label: "Responsive Mobile Experience",
   },
   {
     type: "image",
     src: "/projects/client/anna/3.png",
+    label: "Modern UI Components",
+  },
+  {
+    type: "image",
+    src: "/projects/client/anna/after.png",
+    label: "Full Website Redesign",
   },
 ],
   },
