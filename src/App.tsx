@@ -293,81 +293,92 @@ function App() {
       </section>
 
       {/* MORE WORK */}
-      <section className="more-work-section">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">
-              More work
+      {/* MORE WORK */}
+<section className="more-work-section">
+  <div className="section-heading">
+    <div>
+      <p className="eyebrow">More work</p>
+      <h2>
+        Additional projects across frontend
+        and mobile.
+      </h2>
+    </div>
+  </div>
+
+  <div className="more-work-grid">
+    {moreProjects.map((project, index) => (
+      <article
+        className="more-work-card"
+        key={project.id}
+      >
+        <div className="more-work-number">
+          {String(index + 1).padStart(2, '0')}
+        </div>
+
+        <div className="more-work-card-content">
+          <div className="more-work-copy">
+            <p className="more-work-badge">
+              {project.badge}
             </p>
 
-            <h2>
-              Additional projects across frontend
-              and mobile.
-            </h2>
+            <h3>{project.title}</h3>
+
+            <p className="more-work-description">
+              {project.shortDesc}
+            </p>
+          </div>
+
+          {project.media[0] && (
+            <div className="more-work-media">
+              {project.media[0].type === 'video' ? (
+                <video
+                  src={project.media[0].src}
+                  muted
+                  playsInline
+                  preload="metadata"
+                />
+              ) : (
+                <img
+                  src={project.media[0].src}
+                  alt={`${project.title} preview`}
+                  loading="lazy"
+                />
+              )}
+            </div>
+          )}
+
+          <div className="more-work-meta">
+            <p className="project-tech">
+              {project.tech}
+            </p>
+
+            <div className="project-links">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+              )}
+
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live site
+                </a>
+              )}
+            </div>
           </div>
         </div>
-
-        <div className="more-work-grid">
-          {moreProjects.map(
-            (project, index) => (
-              <article
-                className="more-work-card"
-                key={project.id}
-              >
-                <div className="more-work-number">
-                  {String(
-                    index + 1,
-                  ).padStart(2, '0')}
-                </div>
-
-                <div className="more-work-card-content">
-                  <p className="more-work-badge">
-                    {project.badge}
-                  </p>
-
-                  <h3>
-                    {project.title}
-                  </h3>
-
-                  <p>
-                    {project.shortDesc}
-                  </p>
-
-                  <p className="project-tech">
-                    {project.tech}
-                  </p>
-
-                  <div className="project-links">
-                    {project.github && (
-                      <a
-                        href={
-                          project.github
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        GitHub
-                      </a>
-                    )}
-
-                    {project.live && (
-                      <a
-                        href={
-                          project.live
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Live site
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </article>
-            ),
-          )}
-        </div>
-      </section>
+      </article>
+    ))}
+  </div>
+</section>
 
       {/* EXPERIENCE */}
       <Experience />

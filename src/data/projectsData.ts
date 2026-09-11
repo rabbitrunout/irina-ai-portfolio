@@ -242,37 +242,24 @@ export const projects: Project[] = [
       "https://www.vorobkaloevent.store/",
 
     media: [
-      {
-        type: "image",
-        src: "/projects/client/anna/before.png",
-        label: "Original Website · 2024",
-      },
-      {
-        type: "image",
-        src: "/projects/client/anna/after.png",
-        label: "Premium Redesign · 2026",
-      },
-      {
-        type: "video",
-        src: "/projects/client/anna/demo.mp4",
-        label: "Interactive Website Demo",
-      },
-      {
-        type: "image",
-        src: "/projects/client/anna/1.png",
-        label: "Hero Section",
-      },
-      {
-        type: "image",
-        src: "/projects/client/anna/2.png",
-        label: "Responsive Mobile Experience",
-      },
-      {
-        type: "image",
-        src: "/projects/client/anna/3.png",
-        label: "Frontend UI",
-      },
-    ],
+  {
+    type: "image",
+    src: "/projects/client/anna/after.png",
+    label: "Final website",
+  },
+  {
+    type: "image",
+    src: "/projects/client/anna/1.png",
+  },
+  {
+    type: "image",
+    src: "/projects/client/anna/2.png",
+  },
+  {
+    type: "image",
+    src: "/projects/client/anna/3.png",
+  },
+],
   },
 
   {
@@ -463,43 +450,24 @@ export const projects: Project[] = [
       "https://github.com/rabbitrunout/AndroidApp5",
 
     media: [
-      {
-        type: "image",
-        src: "/projects/mobile/sound/1.png",
-      },
-      {
-        type: "image",
-        src: "/projects/mobile/sound/2.png",
-      },
-      {
-        type: "image",
-        src: "/projects/mobile/sound/3.png",
-      },
-      {
-        type: "image",
-        src: "/projects/mobile/sound/4.png",
-      },
-      {
-        type: "image",
-        src: "/projects/mobile/sound/5.png",
-      },
-      {
-        type: "image",
-        src: "/projects/mobile/sound/6.png",
-      },
-      {
-        type: "image",
-        src: "/projects/mobile/sound/7.png",
-      },
-      {
-        type: "image",
-        src: "/projects/mobile/sound/8.png",
-      },
-      {
-        type: "image",
-        src: "/projects/mobile/sound/9.png",
-      },
-    ],
+  {
+    type: "image",
+    src: "/projects/mobile/sound/2.png",
+    label: "SuperPodcast interface",
+  },
+  {
+    type: "image",
+    src: "/projects/mobile/sound/1.png",
+  },
+  {
+    type: "image",
+    src: "/projects/mobile/sound/3.png",
+  },
+  {
+    type: "image",
+    src: "/projects/mobile/sound/4.png",
+  },
+],
   },
 ];
 
